@@ -1,0 +1,162 @@
+%!TEX root=kapfhammer_gatorday2015_presentation.tex
+% mainfile: kapfhammer_gatorday2015_presentation.tex
+
+\documentclass[hyperref]{beamer}
+% \includeonlyframes{current}
+
+\usecolortheme[accent=blue,dark]{solarized}
+
+\beamertemplatetransparentcovered
+
+\usepackage[utf8]{inputenc}
+\usepackage{merriweather}
+\usepackage{moresize}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepgfplotslibrary{colormaps,external}
+
+\usepackage{minted}
+\usemintedstyle{solarized}
+
+\usepackage{pifont}
+\newcommand{\cmark}{{\color{solarizedGreen}\ding{51}}}
+\newcommand{\xmark}{{\color{solarizedOrange}{\ding{55}}}}
+\newcommand{\cmarkhide}{{\color{kapfhammerDarkGrey}\ding{51}}}
+\newcommand{\xmarkhide}{{\color{kapfhammerDarkGrey}{\ding{55}}}}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,shadows,arrows,shapes,calc,backgrounds}
+
+\setbeamercolor{background canvas}{bg=kapfhammerDarkGrey}
+
+\setbeamertemplate{section in toc shaded}[default][65]
+\setbeamertemplate{subsection in toc shaded}[default][65]
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamerfont{title}{size=\HUGE,series=\rmfamily,parent=merriweather}
+\setbeamerfont{frametitle}{size=\HUGE,series=\rmfamily,parent=merriweather}
+\setbeamerfont{framesubtitle}{size=\normalsize,series=\rmfamily,parent=merriweather}
+\setbeamerfont{subtitle}{size=\normalsize,series=\bfseries,parent=merriweather}
+\setbeamerfont{author}{size=\LARGE,series=\bfseries,parent=merriweather}
+\setbeamerfont{institute}{size=\normalsize,series=\bfseries,parent=merriweather}
+\setbeamerfont{date}{size=\normalsize,series=\bfseries,parent=merriweather}
+
+\setbeamercolor{title}{fg=solarizedOrange}
+\setbeamercolor{subtitle}{fg=solarizedViolet}
+\setbeamercolor{frametitle}{fg=solarizedRebase00}
+\setbeamercolor{framesubtitle}{fg=solarizedRebase00}
+\setbeamercolor{author}{fg=solarizedRebase00}
+\setbeamercolor{institute}{fg=solarizedRebase00}
+\setbeamercolor{date}{fg=solarizedRebase00}
+
+\addtobeamertemplate{frametitle}{\vskip.1in}{}
+
+\title{lolwut}
+
+% \title{Automatically Evaluating the Efficiency of Search-Based Test Data Generation for Relational Database Schemas}
+
+\subtitle{That title is just excessive}
+
+\author[Kinneer-Kapfhammer]{Cody Kinneer \and Gregory M.\ Kapfhammer}
+\institute[Allegheny College]{Department of Computer Science\\ Allegheny College}
+\date[Feb 23, 2015]{March 31, 2015}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% \begin{frame}
+%   \tableofcontents
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Challenges of Software
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%intro
+\section{Search-based Software Testing}
+  \begin{frame}
+    \frametitle{Search-based Software Testing}
+    \begin{itemize}
+      \item EvoSuite
+      \item SchemaAnalyst
+      \item \in O(?)
+    \end{itemize}
+  \end{frame}
+
+  %background
+  \section{Background}
+
+    \begin{frame}
+      \frametitle{Measuring Performance}
+      \begin{itemize}
+        \item Scalability
+        \item O()
+        \item Doubling experiment
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+      \frametitle{SchemaAnalyst}
+      \begin{itemize}
+        \item Criterion
+        \item Data generator
+        \item Schema
+      \end{itemize}
+    \end{frame}
+
+    \section{Technique}
+      \begin{frame}
+        % \begin{figure}
+          \frametitle{Method of Approach}
+          \centering
+          \input{styles/kapfhammer-solarized-tikz-colors.tex}
+          \input{diagram.tex}
+        % \end{figure}
+      \end{frame}
+
+      \begin{frame}
+        \frametitle{Automatic Doubling Experiments}
+        \begin{itemize}
+          \item Diagram
+          \item Convergence Algs
+          \item Doubling Schemas
+        \end{itemize}
+      \end{frame}
+
+    \section{Experiment Design}
+      \begin{frame}
+        \frametitle{Experiments}
+        \begin{itemize}
+          \item Parameters Studied
+          \item Cluster
+        \end{itemize}
+      \end{frame}
+
+    \section{Results}
+      \begin{frame}
+        \frametitle{Results}
+        \begin{itemize}
+          \item BigOh Table
+          \item Data mining
+          \item Statistical Tests
+        \end{itemize}
+      \end{frame}
+
+    \section{Conclusion}
+      \begin{frame}
+        \frametitle{Conclusion}
+      \end{frame}
+
+      % \begin{frame}
+      %   \titlepage
+      % \end{frame}
+
+      \end{document}

@@ -1,0 +1,95 @@
+\newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
+\newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
+
+% Define the layers to draw the diagram
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% Define distances for bordering
+\def\blockdist{2}
+\def\vertdist{2}
+
+\begin{tikzpicture}[thick,scale=0.4, every node/.style={scale=0.4}]
+    \node (wa) [proc]  {\textit{SchemaAnalyst}};
+
+    \path (wa.west)+(-\blockdist,1.0*\vertdist) node (asr2)[io] {Coverage Criterion};
+    \path (wa.west)+(-\blockdist,0.0*\vertdist) node (dots)[io] {Data Generator};
+
+    \path (wa.west)+(-\blockdist,-1.0*\vertdist) node (asr1) [io] {Database Schema};
+    \path (asr1.west)+(-\blockdist,0.0*\vertdist) node (doubler) [proc] {Schema Doubler};
+
+        \path (asr2.west)+(-2.65*\blockdist-.12,-0.0*\vertdist) node (criteriona)
+        [io] {Coverage Criterion};
+        \path (dots.west)+(-2.65*\blockdist-.12,-0.0*\vertdist) node (dataa) [io] {Data Generator};
+    \path (doubler.west)+(-\blockdist,-0.0*\vertdist) node (doublera) [io] {Doubler Choice};
+    \path (doubler.west)+(-\blockdist,-1.0*\vertdist) node (schemaa) [io] {Database Schema};
+
+    \path (wa.east)+(\blockdist,0*\vertdist) node (vote) [io] {Test Suite};
+
+    \path [draw, ->] (doubler.east) -- node [above] {}
+        (asr1.180);
+
+    \path [draw, ->] (asr1.east) -- node [above] {}
+        (wa.200);
+    \path [draw, ->] (asr2.east) -- node [above] {}
+        (wa.160);
+    \path [draw, ->] (dots.east) -- node [above] {}
+        (wa.180);
+    \path [draw, ->] (wa.east) -- node [above] {}
+        (vote.west);
+
+    \path [draw, ->] (doublera.east) -- node [above] {}
+        (doubler.west);
+    \path [draw, ->] (dataa.east) -- node [above] {}
+        (dots.west);
+    \path [draw, ->] (criteriona.east) -- node [above] {}
+        (asr2.west);
+    \path [draw, ->] (schemaa.east) -| node [above] {}
+        (doubler.230);
+
+    \path (vote.east)+(\blockdist,0*\vertdist) node (runtime) [io] {Runtime Records};
+    \path [draw,->] (vote.east)+(0.3,0) -- node [above]{}
+        (runtime.west);
+    \path (runtime.east)+(\blockdist,0*\vertdist) node (runtimeo) [io] {Runtime Records};
+
+
+     \path (vote.east)+(\blockdist,-3.165*\vertdist) node (convalg) [proc] {Converge Algorithm};
+     \path [draw,->] (runtime.south) -- node [above]{}
+        (convalg.north);
+     \path [draw,->] (convalg.west) -| node [above,pos=.25]{Continue Experiment}
+        (doubler.290);
+
+        \path [draw,->] (runtime.east) -- node [above]{}
+        (runtimeo);
+
+
+    \path (wa.south) +(0,-1.4) node (asrs) {\textit{SchemaAnalyst} Execution};
+
+    \path (asrs.south) +(0,-1.6) node (singleexp) {\textsc{ExpOse}};
+
+    \begin{pgfonlayer}{background}
+        \path (doubler.west |- asr2.north)+(-0.3,0.6) node (a) {};
+        \path (wa.south -| runtime.east)+(+0.3,-0.6) node (b) {};
+        \path (runtime.east |- singleexp.east)+(+0.3,-0.3) node (c) {};
+
+        \path[fill=kapfhammerDarkGrey,rounded corners, draw=black!50, dashed]
+            (a) rectangle (c);
+        \path (asr1.north west)+(-0.2,0.2) node (a) {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{background}
+        \path (asr2.west |- asr2.north)+(-0.3,0.3) node (a) {};
+        \path (wa.south -| wa.east)+(+0.3,-0.3) node (b) {};
+        \path (vote.east |- asrs.east)+(+0.3,-0.5) node (c) {};
+
+        \path[fill=kapfhammerDarkGrey,rounded corners, draw=black!50, dashed]
+            (a) rectangle (c);
+        \path (asr1.north west)+(-0.2,0.2) node (a) {};
+
+    \end{pgfonlayer}
+
+
+
+\end{tikzpicture}
