@@ -1,0 +1,46 @@
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\begin{minipage}{.5in}
+
+\begin{center}
+
+\begin{minipage}{.45in}
+
+\begin{figure}
+
+\begin{center}
+
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+
+\path[use as bounding box] (-5.0,2.5) rectangle (10,-2);
+
+\node<1-> (table) [proc] {
+    \begin{tabular}{l}
+    \textbf{Table}\\ \hline
+        \parbox{4cm}{
+            \begin{itemize}
+                \color{solarizedBase02}
+                \item Column 1
+                \item Column 2
+                \item \dots
+                \item Column n
+            \end{itemize}
+        }
+    \end{tabular}
+};
+
+\path<2-> (table.west)+(-2,0) node (nn1) [proctest] {NOT NULL};
+\path<2-> [draw, ->] (nn1.east) -- node [above] {} (table.179);
+
+\path<3-> (nn1.south)+(0,-.5) node (nn2) [proctest] {NOT NULL};
+\path<3-> [draw, ->] (nn2.east) -- node [above] {} (table.181);
+
+\end{tikzpicture}
+
+\end{center}
+\end{figure}
+\end{minipage}
+\end{center}
+\end{minipage}

@@ -1,5 +1,5 @@
-%!TEX root=kapfhammer_gatorday2015_presentation.tex
-% mainfile: kapfhammer_gatorday2015_presentation.tex
+%!TEX root=kinneer_seke.tex
+% mainfile: kinneer_seke.tex
 
 \documentclass[hyperref]{beamer}
 % \includeonlyframes{current}
@@ -19,9 +19,6 @@
 \pgfplotsset{compat=1.9}
 \usepgfplotslibrary{colormaps,external}
 
-\usepackage{minted}
-\usemintedstyle{solarized}
-
 \usepackage{pifont}
 \newcommand{\cmark}{{\color{solarizedGreen}\ding{51}}}
 \newcommand{\xmark}{{\color{solarizedOrange}{\ding{55}}}}
@@ -38,7 +35,7 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-\setbeamerfont{title}{size=\HUGE,series=\rmfamily,parent=merriweather}
+\setbeamerfont{title}{size=\LARGE,series=\rmfamily,parent=merriweather}
 \setbeamerfont{frametitle}{size=\HUGE,series=\rmfamily,parent=merriweather}
 \setbeamerfont{framesubtitle}{size=\normalsize,series=\rmfamily,parent=merriweather}
 \setbeamerfont{subtitle}{size=\normalsize,series=\bfseries,parent=merriweather}
@@ -56,15 +53,14 @@
 
 \addtobeamertemplate{frametitle}{\vskip.1in}{}
 
-\title{lolwut}
 
-% \title{Automatically Evaluating the Efficiency of Search-Based Test Data Generation for Relational Database Schemas}
+\title{Automatically Evaluating the Efficiency of Search-Based Test Data Generation for Relational Database Schemas}
 
-\subtitle{That title is just excessive}
+% \subtitle{That title is just excessive}
 
-\author[Kinneer-Kapfhammer]{Cody Kinneer \and Gregory M.\ Kapfhammer}
-\institute[Allegheny College]{Department of Computer Science\\ Allegheny College}
-\date[Feb 23, 2015]{March 31, 2015}
+\author[Kinneer-Kapfhammer]{Cody Kinneer \and \\ Gregory M.\ Kapfhammer}
+\institute[SEKE 2015]{SEKE 2015}
+\date[Feb 23, 2015]{July 7, 2015}
 
 \begin{document}
 
@@ -82,25 +78,70 @@
 
 %intro
 \section{Search-based Software Testing}
-  \begin{frame}
+
+  \begin{frame}[t]
+
+  \frametitle{Random Testing}
+  \framesubtitle{It is easy to randomly generate tests --- but how good are they?}
+
+  \vspace*{.2in}
+  \hspace{.4in}
+  \resizebox{3.0in}{!}{
+    \begin{tikzpicture}
+      \begin{axis}[colorbar horizontal]
+        \addplot[only marks,scatter,
+          scatter src={mod(\coordindex,15)},samples=150]
+          {rand};
+      \end{axis}
+  \end{tikzpicture}}
+
+\end{frame}
+
+\begin{frame}[t]
+
+  \frametitle{Search-Based Testing}
+  \framesubtitle{Use a fitness function to guide the search to ``good'' values}
+
+  \vspace*{.25in}
+  \hspace{.25in}
+  \resizebox{3.5in}{!}{
+    \begin{tikzpicture}
+      \begin{axis}[
+          domain=0:1,
+          xmax=1,
+          ymax=1,
+        ]
+        \addplot3[surf] {x*y};
+        \addplot3[solarizedRebase0,/pgfplots/quiver,
+            quiver/u=y,
+            quiver/v=x,
+            quiver/w=0,
+            quiver/scale arrows=0.1,
+          -stealth,samples=10] {1};
+      \end{axis}
+  \end{tikzpicture}}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Performance of Search-based Software Testing}
+   \input{styles/kapfhammer-solarized-tikz-colors.tex}
+   \input{knobtest.tex}
+\end{frame}
+
+\begin{frame}
     \frametitle{Search-based Software Testing}
-    \begin{itemize}
-      \item EvoSuite
-      \item SchemaAnalyst
-      \item \in O(?)
-    \end{itemize}
-  \end{frame}
+    \HUGE O( )
+\end{frame}
+
+
+
 
   %background
   \section{Background}
 
     \begin{frame}
-      \frametitle{Measuring Performance}
-      \begin{itemize}
-        \item Scalability
-        \item O()
-        \item Doubling experiment
-      \end{itemize}
+      \frametitle{Doubling Experiment}
     \end{frame}
 
     \begin{frame}
@@ -118,26 +159,31 @@
           \frametitle{Method of Approach}
           \centering
           \input{styles/kapfhammer-solarized-tikz-colors.tex}
-          \input{diagram.tex}
+          \input{moddiagram.tex}
         % \end{figure}
       \end{frame}
 
       \begin{frame}
-        \frametitle{Automatic Doubling Experiments}
-        \begin{itemize}
-          \item Diagram
-          \item Convergence Algs
-          \item Doubling Schemas
-        \end{itemize}
+        \frametitle{Doubling Database Schemas}
+        \centering
+        \input{styles/kapfhammer-solarized-tikz-colors.tex}
+        \input{semantic.tex}
       \end{frame}
 
     \section{Experiment Design}
       \begin{frame}
         \frametitle{Experiments}
+        \begin{columns}
+        \column{0.5\textwidth}
         \begin{itemize}
           \item Parameters Studied
           \item Cluster
         \end{itemize}
+          \column{0.5\textwidth}
+          \begin{figure}
+            \includegraphics[width=\textwidth]{iceberg2014.jpg}
+          \end{figure}
+      \end{columns}
       \end{frame}
 
     \section{Results}
@@ -149,6 +195,17 @@
           \item Statistical Tests
         \end{itemize}
       \end{frame}
+
+      \begin{frame}
+        \frametitle{Criterion}
+        \includegraphics[width=\textwidth]{CriterionBox}
+      \end{frame}
+
+      \begin{frame}
+        \frametitle{Data Generator}
+        \includegraphics[width=\textwidth]{DataGeneratorBox}
+      \end{frame}
+
 
     \section{Conclusion}
       \begin{frame}

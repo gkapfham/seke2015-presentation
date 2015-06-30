@@ -1,0 +1,83 @@
+\newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
+\newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
+
+% Define the layers to draw the diagram
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% Define distances for bordering
+\def\blockdist{3.5}
+\def\vertdist{2}
+
+\hspace{-.25in}
+
+\begin{minipage}{5in}
+
+  \begin{center}
+
+    \begin{minipage}{4.5in}
+
+      \begin{figure}
+
+        \begin{center}
+
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+
+  \path[use as bounding box] (-3.0,2.5) rectangle (10,-2);
+
+    \path[->]<1-> node[proc, text width=15ex]
+    (sa) at (1.5,.75) {\centering \textit{SchemaAnalyst} \\ Execution};
+
+    \path[->]<2-> node[io, left of=sa, yshift=0.70in, xshift=-1.25in,text width=7ex] 
+    (cc) {\centering Coverage \\ Criterion} (cc) edge node {} (sa);
+
+    \path[->]<3-> node[io, left of=sa, yshift=0.0in, xshift=-1.25in,text width=7ex] 
+    (dg) {\centering Data \\ Generator} (dg) edge node {} (sa);
+
+    \path[->]<4-6> node[io, left of=sa, yshift=-0.70in, xshift=-1.25in,text width=7ex] 
+    (ds) {\centering Database \\ Schema} (ds) edge node {} (sa);
+
+    \path[->]<5> node[io, right of=sa, yshift=0.0in, xshift=1.25in,text width=7ex] 
+    (ts) {\centering Test \\ Suite \\} (sa) edge node {} (ts);
+
+    \path[->]<6-> node[io, right of=sa, yshift=0.0in, xshift=1.25in,text width=7ex] 
+    (ts) {\centering Runtime} (sa) edge node {} (ts);
+
+    \path[->]<7-> node[proc, below of=sa, yshift=-0.3in, xshift=0.0in,text width=15ex] 
+    (sd) {\centering Schema Doubler} (sd) edge node {Provides Schema} (sa);
+
+    \path[->]<7-> node[io, left of=sa, yshift=-0.70in, xshift=-1.25in,text width=7ex] 
+    (ds) {\centering Database \\ Schema} (ds) edge node {} (sd);
+
+    \path[->]<8-> node[io, left of=sa, yshift=-1.40in, xshift=-1.25in,text width=7ex] 
+    (dc) {\centering Doubler \\ Choice} (dc) edge node {} (sd);
+
+    \path[->]<9-> node[proc, right of=sd, yshift=0.0in, xshift=1.25in,text width=15ex] 
+    (ca) {\centering Convergence \\ Algorithm} (ca) edge node [below=.20in]{Continue?} (sd);
+
+    \path[->]<9-> (ts) edge node {} (ca);
+
+    % \begin{pgfonlayer}{background}
+    %     \path (cc.west |- cc.north)+(-0.3,0.3) node (a) {};
+    %     \path (sa.south -| sa.east)+(+0.3,-0.3) node (b) {};
+    %     \path (ts.east |- ds.east)+(+0.3,-0.5) node (c) {};
+
+    %     \path[fill=kapfhammerDarkGrey,rounded corners, draw=black!50, dashed]
+    %         (a) rectangle (c);
+
+    %     \path (ds.north west)+(-0.2,0.2) node (a) {};
+
+    % \end{pgfonlayer}
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{figure}
+
+\end{minipage}
+
+\end{center}
+
+\end{minipage}
