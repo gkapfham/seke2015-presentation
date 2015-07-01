@@ -1,0 +1,27 @@
+\begin{tikzpicture}[node distance=0cm, auto,>=stealth, thick]
+
+        \path[use as bounding box] (-2,4.5) rectangle (10,-2);
+
+        % Computer Software
+        \path[->]<1-> node[io, minimum width=10ex]
+        (Software) at (3.5,2.5) {Tables};
+
+        % Features
+        \path[->]<3-> node[io, below of=Software,
+                      yshift=-1in, xshift=-.75in, minimum width=10ex]
+                      (Features) {Criterion}
+        (Software) edge node {} (Features);
+
+        % Feature Interactions
+        \path[->]<4-> node[io, below of=Software,
+                      yshift=-1in, xshift=.75in, minimum width=10ex]
+                      (Interactions) {Tables}
+        (Software) edge node {} (Interactions);
+
+                      % Brooks Quotation
+        \path[->]<6-> node[specialGreen, below of=Software,
+                      yshift=-1.5in,text width=40ex]
+                      (Quotations)
+                      {Too many combinations!};
+
+\end{tikzpicture}

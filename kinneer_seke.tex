@@ -54,7 +54,7 @@
 \addtobeamertemplate{frametitle}{\vskip.1in}{}
 
 
-\title{Automatically Evaluating the Efficiency of Search-Based Test Data Generation for Relational Database Schemas}
+\title{Automatically Evaluating the Efficiency of Search-Based \\ Test Data Generation for Relational Database Schemas}
 
 % \subtitle{That title is just excessive}
 
@@ -126,31 +126,29 @@
 \begin{frame}
   \frametitle{Performance of Search-based Software Testing}
    \input{styles/kapfhammer-solarized-tikz-colors.tex}
-   \input{knobtest.tex}
+   \input{dials.tex}
 \end{frame}
 
+\setbeamercovered{invisible}
 \begin{frame}
     \frametitle{Search-based Software Testing}
-    \HUGE O( )
+    \begin{center}
+  \fontsize{60}{72}\selectfont
+  O(\uncover<2->{?})
+  \end{center}
+  \input{styles/kapfhammer-solarized-tikz-colors.tex}
+  \begin{tikzpicture}
+          \path[->]<3-> node[special,]
+                      (Requirements) at (1.5,.75)
+              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
+  \end{tikzpicture}
 \end{frame}
-
-
-
 
   %background
   \section{Background}
 
     \begin{frame}
       \frametitle{Doubling Experiment}
-    \end{frame}
-
-    \begin{frame}
-      \frametitle{SchemaAnalyst}
-      \begin{itemize}
-        \item Criterion
-        \item Data generator
-        \item Schema
-      \end{itemize}
     \end{frame}
 
     \section{Technique}
@@ -171,6 +169,14 @@
       \end{frame}
 
     \section{Experiment Design}
+
+      \begin{frame}
+        \frametitle{Experiments}
+        \centering
+        \input{styles/kapfhammer-solarized-tikz-colors.tex}
+        \input{ExpParams.tex}
+      \end{frame}
+
       \begin{frame}
         \frametitle{Experiments}
         \begin{columns}
@@ -186,24 +192,35 @@
       \end{columns}
       \end{frame}
 
-    \section{Results}
-      \begin{frame}
-        \frametitle{Results}
-        \begin{itemize}
-          \item BigOh Table
-          \item Data mining
-          \item Statistical Tests
-        \end{itemize}
+         \begin{frame}
+        \frametitle{Experiments}
+        \centering
+        \input{styles/kapfhammer-solarized-tikz-colors.tex}
+        \input{RegTree.tex}
       \end{frame}
 
       \begin{frame}
         \frametitle{Criterion}
         \includegraphics[width=\textwidth]{CriterionBox}
+        \input{styles/kapfhammer-solarized-tikz-colors.tex}
+        \begin{tikzpicture}
+          \path[->]<3-> node[special,]
+                      (Requirements) at (1.5,.75)
+              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
+  \end{tikzpicture}
+
       \end{frame}
 
       \begin{frame}
         \frametitle{Data Generator}
         \includegraphics[width=\textwidth]{DataGeneratorBox}
+        \input{styles/kapfhammer-solarized-tikz-colors.tex}
+        \begin{tikzpicture}
+          \path[->]<3-> node[special,]
+                      (Requirements) at (1.5,.75)
+              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
+  \end{tikzpicture}
+
       \end{frame}
 
 
