@@ -72,165 +72,22 @@
 %   \tableofcontents
 % \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The Challenges of Software
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%intro
 \section{Search-based Software Testing}
+\input{sections/introduction.tex}
 
-  \begin{frame}[t]
+\section{Background}
+\input{sections/background.tex}    
 
-  \frametitle{Random Testing}
-  \framesubtitle{It is easy to randomly generate tests --- but how good are they?}
+\section{Technique}
+\input{sections/technique.tex}
 
-  \vspace*{.2in}
-  \hspace{.4in}
-  \resizebox{3.0in}{!}{
-    \begin{tikzpicture}
-      \begin{axis}[colorbar horizontal]
-        \addplot[only marks,scatter,
-          scatter src={mod(\coordindex,15)},samples=150]
-          {rand};
-      \end{axis}
-  \end{tikzpicture}}
+\section{Experiment Design}
+\input{sections/experiments.tex}
 
-\end{frame}
+\section{Results}
+\input{sections/results.tex}
 
-\begin{frame}[t]
+\section{Conclusion}
+\input{sections/conclusion.tex}
 
-  \frametitle{Search-Based Testing}
-  \framesubtitle{Use a fitness function to guide the search to ``good'' values}
-
-  \vspace*{.25in}
-  \hspace{.25in}
-  \resizebox{3.5in}{!}{
-    \begin{tikzpicture}
-      \begin{axis}[
-          domain=0:1,
-          xmax=1,
-          ymax=1,
-        ]
-        \addplot3[surf] {x*y};
-        \addplot3[solarizedRebase0,/pgfplots/quiver,
-            quiver/u=y,
-            quiver/v=x,
-            quiver/w=0,
-            quiver/scale arrows=0.1,
-          -stealth,samples=10] {1};
-      \end{axis}
-  \end{tikzpicture}}
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{Performance of Search-based Software Testing}
-   \input{styles/kapfhammer-solarized-tikz-colors.tex}
-   \input{dials.tex}
-\end{frame}
-
-\setbeamercovered{invisible}
-\begin{frame}
-    \frametitle{Search-based Software Testing}
-    \begin{center}
-  \fontsize{60}{72}\selectfont
-  O(\uncover<2->{?})
-  \end{center}
-  \input{styles/kapfhammer-solarized-tikz-colors.tex}
-  \begin{tikzpicture}
-          \path[->]<3-> node[special,]
-                      (Requirements) at (1.5,.75)
-              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
-  \end{tikzpicture}
-\end{frame}
-
-  %background
-  \section{Background}
-
-    \begin{frame}
-      \frametitle{Doubling Experiment}
-    \end{frame}
-
-    \section{Technique}
-      \begin{frame}
-        % \begin{figure}
-          \frametitle{Method of Approach}
-          \centering
-          \input{styles/kapfhammer-solarized-tikz-colors.tex}
-          \input{moddiagram.tex}
-        % \end{figure}
-      \end{frame}
-
-      \begin{frame}
-        \frametitle{Doubling Database Schemas}
-        \centering
-        \input{styles/kapfhammer-solarized-tikz-colors.tex}
-        \input{semantic.tex}
-      \end{frame}
-
-    \section{Experiment Design}
-
-      \begin{frame}
-        \frametitle{Experiments}
-        \centering
-        \input{styles/kapfhammer-solarized-tikz-colors.tex}
-        \input{ExpParams.tex}
-      \end{frame}
-
-      \begin{frame}
-        \frametitle{Experiments}
-        \begin{columns}
-        \column{0.5\textwidth}
-        \begin{itemize}
-          \item Parameters Studied
-          \item Cluster
-        \end{itemize}
-          \column{0.5\textwidth}
-          \begin{figure}
-            \includegraphics[width=\textwidth]{iceberg2014.jpg}
-          \end{figure}
-      \end{columns}
-      \end{frame}
-
-         \begin{frame}
-        \frametitle{Experiments}
-        \centering
-        \input{styles/kapfhammer-solarized-tikz-colors.tex}
-        \input{RegTree.tex}
-      \end{frame}
-
-      \begin{frame}
-        \frametitle{Criterion}
-        \includegraphics[width=\textwidth]{CriterionBox}
-        \input{styles/kapfhammer-solarized-tikz-colors.tex}
-        \begin{tikzpicture}
-          \path[->]<3-> node[special,]
-                      (Requirements) at (1.5,.75)
-              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
-  \end{tikzpicture}
-
-      \end{frame}
-
-      \begin{frame}
-        \frametitle{Data Generator}
-        \includegraphics[width=\textwidth]{DataGeneratorBox}
-        \input{styles/kapfhammer-solarized-tikz-colors.tex}
-        \begin{tikzpicture}
-          \path[->]<3-> node[special,]
-                      (Requirements) at (1.5,.75)
-              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
-  \end{tikzpicture}
-
-      \end{frame}
-
-
-    \section{Conclusion}
-      \begin{frame}
-        \frametitle{Conclusion}
-      \end{frame}
-
-      % \begin{frame}
-      %   \titlepage
-      % \end{frame}
-
-      \end{document}
+\end{document}

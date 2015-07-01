@@ -1,0 +1,65 @@
+  \begin{frame}[t]
+
+  \frametitle{Random Testing}
+  \framesubtitle{It is easy to randomly generate tests --- but how good are they?}
+
+  \vspace*{.2in}
+  \hspace{.4in}
+  \resizebox{3.0in}{!}{
+    \begin{tikzpicture}
+      \begin{axis}[colorbar horizontal]
+        \addplot[only marks,scatter,
+          scatter src={mod(\coordindex,15)},samples=150]
+          {rand};
+      \end{axis}
+  \end{tikzpicture}}
+
+\end{frame}
+
+\begin{frame}[t]
+
+  \frametitle{Search-Based Testing}
+  \framesubtitle{Use a fitness function to guide the search to ``good'' values}
+
+  \vspace*{.25in}
+  \hspace{.25in}
+  \resizebox{3.5in}{!}{
+    \begin{tikzpicture}
+      \begin{axis}[
+          domain=0:1,
+          xmax=1,
+          ymax=1,
+        ]
+        \addplot3[surf] {x*y};
+        \addplot3[solarizedRebase0,/pgfplots/quiver,
+            quiver/u=y,
+            quiver/v=x,
+            quiver/w=0,
+            quiver/scale arrows=0.1,
+          -stealth,samples=10] {1};
+      \end{axis}
+  \end{tikzpicture}}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Performance of Search-based Software Testing}
+   \input{styles/kapfhammer-solarized-tikz-colors.tex}
+   \input{dials.tex}
+\end{frame}
+
+\setbeamercovered{invisible}
+\begin{frame}
+    \frametitle{Search-based Software Testing}
+    \begin{center}
+  \fontsize{60}{72}\selectfont
+  O(\uncover<2->{?})
+  \end{center}
+  \input{styles/kapfhammer-solarized-tikz-colors.tex}
+  \begin{tikzpicture}
+          \path[->]<3-> node[special,]
+                      (Requirements) at (1.5,.75)
+              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
+  \end{tikzpicture}
+\end{frame}
+
