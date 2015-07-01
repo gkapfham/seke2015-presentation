@@ -9,8 +9,8 @@
   \frametitle{Schemas}
   \framesubtitle{Relational database schemas used in emprical study}
 
+  \begin{figure}
   \begin{center}
-
   {\normalsize
   \begin{tabular}{r | c c c}
                            Schema & Tables & Columns & Constraints \\ \hline
@@ -24,7 +24,22 @@
     RiskIt                        & 13     & 57      & 36 \\
     UnixUsage                     & 8      & 32      & 24
 \end{tabular}}
-
 \end{center}
+\end{figure}
+
+\input{styles/kapfhammer-solarized-tikz-colors.tex}
+
+\begin{minipage}{1.5in}
+\begin{figure}
+\begin{centering}
+\begin{tikzpicture}
+    \path[->]<2-> node[special,]
+(Requirements) at (0,-5)
+{Real world schemas with a variety of characteristics};
+\end{tikzpicture}
+\end{centering}
+\end{figure}
+\end{minipage}
+
 
 \end{frame}
