@@ -35,19 +35,19 @@
 
       	\path[->]<1-> node[prochighlight, text width=54ex] 
         (Loss) at (4,2.8) 
-        {This paper presents {\em SchemaAnalyst}, a search-based
-          system for testing the complex \\ integrity constraints in
-          relational schemas};
+        {This paper introduces a framework that empirically
+determines  an  algorithm’s  worst-case  time  complexity  by
+doubling the size of the input and observing the change in
+runtime.};
 
         \path[->]<2-> node[proc, below of=Loss, text width=48ex,
-          yshift=-.225in, xshift=0in] (Comment) {The empirical study
-          demonstrates that {\em Schema\-Analyst}'s efficiency is
-          competitive with {\em DBMonster}'s};
+          yshift=-.225in, xshift=0in] (Comment) {Empirically derived suggestions
+            for the worst-case time complexity of search-based test data generators.};
 
         \path[->]<3-> node[proc, below of=Comment, text width=48ex,
-          yshift=-.1in, xshift=0in] (CommentAgain) {{\em
-            SchemaAnalyst} almost always covers 100\% of the
-          constraints in the 25 chosen relational schemas};
+          yshift=-.1in, xshift=0in] (CommentAgain) {With a systematic focus on a wide
+            variety of configurations, an empirical study revealing trade-offs in search-
+            based test data generation for relational schemas.};
 
         \path[->]<4-> node[proc, below of=CommentAgain, text
           width=48ex, yshift=-.1in, xshift=0in] (CommentOneMore) {{\em
@@ -56,7 +56,7 @@
 
         \path[->]<5-> node[prochighlight, below of=CommentOneMore, text
           width=36ex, yshift=-.025in, xshift=0in] (CommentFinal) 
-        {http://www.schemaanalyst.org};
+        {https://github.com/kinneerc/ExpOse};
 
         %% \path[->]<3-> node[prochighlight, below of=Ambler, text width=48ex,
         %%   yshift=-.5in, xshift=0in] (SchemaAnalyst) 

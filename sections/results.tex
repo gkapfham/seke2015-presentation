@@ -1,4 +1,29 @@
 \begin{frame}
+  \frametitle{Big-Oh}
+  \framesubtitle{Empirically dervived suggestions for worst-case time
+    complexity}
+
+  \begin{center}
+
+  {\normalsize
+  \begin{tabular}{r | c c c}
+                           Schema & Tables & Columns & Constraints \\ \hline
+    BioSQL                        & 28     & 129     & 186 \\
+    Cloc                          & 2      & 10      & 0 \\
+    iTrust                        & 42     & 309     & 134 \\
+    JWhoisServer                  & 6      & 49      & 50 \\
+    NistWeather                   & 2      & 9       & 13 \\
+    NistXTS748                    & 1      & 3       & 3 \\
+    NistXTS749                    & 1      & 3       & 3 \\
+    RiskIt                        & 13     & 57      & 36 \\
+    UnixUsage                     & 8      & 32      & 24
+\end{tabular}}
+
+\end{center}
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Experiments}
 \centering
 \input{styles/kapfhammer-solarized-tikz-colors.tex}
@@ -9,11 +34,15 @@
 \frametitle{Criterion}
 \includegraphics[width=\textwidth]{CriterionBox}
 \input{styles/kapfhammer-solarized-tikz-colors.tex}
+\begin{figure}
+\begin{centering}
 \begin{tikzpicture}
     \path[->]<2-> node[special,]
-(Requirements) at (1.5,.75)
-{Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
+(Requirements) at (0,.75)
+{More effective criterions require addtional runtime};
 \end{tikzpicture}
+\end{centering}
+\end{figure}
 
 \end{frame}
 
@@ -21,10 +50,13 @@
 \frametitle{Data Generator}
 \includegraphics[width=\textwidth]{DataGeneratorBox}
 \input{styles/kapfhammer-solarized-tikz-colors.tex}
+\begin{figure}
+  \begin{centering}
 \begin{tikzpicture}
     \path[->]<2-> node[special,]
 (Requirements) at (1.5,.75)
-{Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
+{More effective restarts are also more efficient};
 \end{tikzpicture}
-
+\end{centering}
+\end{figure}
 \end{frame}

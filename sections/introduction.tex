@@ -4,8 +4,11 @@
   \framesubtitle{It is easy to randomly generate tests --- but how good are they?}
 
   \vspace*{.2in}
-  \hspace{.4in}
-  \resizebox{3.0in}{!}{
+  \hspace{.6in}
+  \begin{minipage}{2.5in}
+\begin{figure}
+  \begin{center}
+  \resizebox{2.5in}{!}{
     \begin{tikzpicture}
       \begin{axis}[colorbar horizontal]
         \addplot[only marks,scatter,
@@ -13,6 +16,20 @@
           {rand};
       \end{axis}
   \end{tikzpicture}}
+\end{center}
+\end{figure}
+\end{minipage}
+
+\input{styles/kapfhammer-solarized-tikz-colors.tex}
+\begin{figure}
+\begin{centering}
+\begin{tikzpicture}
+    \path[->]<2-> node[special,]
+(Requirements) at (0,.75)
+{More effective criterions require addtional runtime};
+\end{tikzpicture}
+\end{centering}
+\end{figure}
 
 \end{frame}
 
@@ -22,8 +39,10 @@
   \framesubtitle{Use a fitness function to guide the search to ``good'' values}
 
   \vspace*{.25in}
-  \hspace{.25in}
-  \resizebox{3.5in}{!}{
+  \hspace{.50in}
+  \begin{minipage}{3.0in}
+  \begin{figure}
+  \resizebox{3.0in}{!}{
     \begin{tikzpicture}
       \begin{axis}[
           domain=0:1,
@@ -39,11 +58,23 @@
           -stealth,samples=10] {1};
       \end{axis}
   \end{tikzpicture}}
+\end{figure}
+\end{minipage}
+\input{styles/kapfhammer-solarized-tikz-colors.tex}
+\begin{figure}
+\begin{centering}
+\begin{tikzpicture}
+    \path[->]<2-> node[special,]
+(Requirements) at (0,.75)
+{More effective criterions require addtional runtime};
+\end{tikzpicture}
+\end{centering}
+\end{figure}
 
 \end{frame}
 
 \begin{frame}
-  \frametitle{Performance of Search-based Software Testing}
+  \frametitle{Performance of SBST}
    \input{styles/kapfhammer-solarized-tikz-colors.tex}
    \input{dials.tex}
 \end{frame}
