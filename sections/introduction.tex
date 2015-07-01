@@ -60,6 +60,23 @@
           \path[->]<3-> node[special,]
                       (Requirements) at (1.5,.75)
               {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
+
+          \path[->]<4-4> node[proc,below of=Requirements, 
+          yshift=-0.5in, xshift=-.75in, minimum width=10ex]
+          (Theoretical) {\xmarkhide {Theoretical}};
+
+          \path[->]<5-> node[proc,below of=Requirements, 
+          yshift=-0.5in, xshift=-.75in, minimum width=10ex]
+          (Theoretical) {\xmark {Theoretical}};
+
+          \path[->]<6-6> node[proc,below of=Requirements, 
+          yshift=-0.5in, xshift=.75in, minimum width=10ex]
+                      (Empirical) {\cmarkhide {Empirical}};
+
+          \path[->]<7-> node[proc,below of=Requirements, 
+          yshift=-0.5in, xshift=.75in, minimum width=10ex]
+                      (Empirical) {\cmark {Empirical}};
+
   \end{tikzpicture}
 \end{frame}
 
