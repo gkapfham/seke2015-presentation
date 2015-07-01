@@ -37,19 +37,36 @@
     \draw[line width=1pt] (\angle:0.82cm) -- (\angle:1cm);
   \foreach \angle in {0,90,180,270}
     \draw[line width=1.3pt] (\angle:0.75cm) -- (\angle:1cm);
-  \draw[line width=1.6pt] (0,0) -- (90-30*#4:0.6cm); % the hand 
+  \draw[line width=1.6pt] (0,0) -- (90-30*#4:0.6cm); % the hand
   \end{scope}
 }
 
+\setbeamercovered{invisible}
 
 \begin{minipage}{3.0in}
 \begin{tikzpicture}[scale=1]
 
-    \clock{0}{0}{clock0}{1*0}; 
-    \clock{1}{0}{clock3}{1*0};
-    \clock{2}{0}{clock6}{1*0}; 
-    \clock{3}{0}{clock9}{1*0};  
-    \clock{4}{0}{clock11}{1*0}; 
+    \uncover<2->{
+    \clock{0}{0}{clock0}{8}; 
+    \node[draw] at (0cm,-1.5cm) {Fitness Function};
+    }
+    \uncover<3->{
+    \clock{1}{0}{clock3}{1};
+    \node[draw] at (2.25cm,-1.5cm) {Data Generator};
+    }
+    \uncover<4->{
+    \clock{2}{0}{clock6}{6}; 
+    \node[draw] at (4.50cm,-1.5cm) {Restart Rule};
+    }
+    \uncover<5->{
+    \clock{3}{0}{clock9}{11}; 
+     \node[draw] at (6.75cm,-1.5cm) {Stop Rule};
+     }
+     \uncover<6->{
+    \clock{4}{0}{clock11}{10}; 
+     \node[draw] at (9cm,-1.5cm) {Resource Allocation};
+     }
+
 
 \end{tikzpicture}%
 \end{minipage}
@@ -57,7 +74,7 @@
 \begin{minipage}{2.0in}
 \begin{figure}
 \begin{tikzpicture}
-    \path[->]<2-> node[special,]
+    \path[->]<7-> node[special,]
 (Requirements) at (0,-4)
 {More effective criterions require addtional runtime};
 \end{tikzpicture}
