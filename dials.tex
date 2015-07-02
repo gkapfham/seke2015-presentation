@@ -43,8 +43,11 @@
 
 \setbeamercovered{invisible}
 
-\begin{minipage}{3.0in}
+\begin{overprint}[5.0in]
+
 \begin{tikzpicture}[scale=1]
+
+    \path[use as bounding box] (-0.5,2.5) rectangle (10,-2);
 
     \uncover<2->{
     \clock{0}{0}{clock0}{8}; 
@@ -69,14 +72,12 @@
 
 
 \end{tikzpicture}%
-\end{minipage}
 
-\begin{minipage}{2.0in}
-\begin{figure}
 \begin{tikzpicture}
+    \path[use as bounding box] (-4.5,1) rectangle (10,-2);
     \path[->]<7-> node[special,]
-(Requirements) at (0,-4)
+(Requirements) at (0,0)
 {More effective criterions require addtional runtime};
-\end{tikzpicture}
-\end{figure}
-\end{minipage}
+\end{tikzpicture}%
+
+\end{overprint}
