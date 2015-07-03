@@ -1,0 +1,45 @@
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+
+      \path[use as bounding box] (-3.0,2.5) rectangle (10,-2);
+
+      \path[->]<1-> node[proc, minimum width=7ex]
+      (doubler) at (0,1.5) {
+        \begin{tabular}{l}
+    \textbf{Doubled}\\ \hline
+        \parbox{3cm}{
+            \begin{itemize}
+                \color{solarizedBase02}
+                \item \textsc{UNIQUE}s
+                \item \textsc{NOT NULL}s
+                \item \textsc{CHECK}s
+            \end{itemize}
+        }
+    \end{tabular}
+        };
+
+      \path[->]<2-> node[proctest, right of=doubler, yshift=0.45in,
+      xshift=1.25in,minimum width=21ex] 
+      (exps) {699 Experiments};
+
+    \path[->]<3-> node[proc, below of=exps, yshift=0.1in,
+      xshift=0in,minimum width=21ex] 
+      (first) {$8\%$ Killed};
+
+    \path[->]<4-> node[proc, below of=first, yshift=0.1in,
+      xshift=0in,minimum width=21ex] 
+      (seccond) {$20\% O(1)$ or $O(\log)$};
+
+    \path[->]<5-> node[special, below of=seccond, yshift=0.10in,
+      xshift=0in,minimum width=21ex] 
+      (third) {$72\% O(n)$ or $O(n\log n)$};
+          
+    \path[->]<6-> node[special, below of=third, yshift=-0.10in,
+      xshift=-0.75in,minimum width=21ex] 
+      (takeaway) {\textit{SchemaAnalyst} scales linearly for constraints studied};
+
+
+
+
+
+
+\end{tikzpicture}
