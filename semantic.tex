@@ -34,8 +34,22 @@
 \path<2-> (table.west)+(-2,0) node (nn1) [proctest] {NOT NULL};
 \path<2-> [draw, ->] (nn1.east) -- node [above] {} (table.179);
 
-\path<3-> (nn1.south)+(0,-.5) node (nn2) [proctest] {NOT NULL};
-\path<3-> [draw, ->] (nn2.east) -- node [above] {} (table.181);
+\path[->]<3-> node[proctest, right of=table, yshift=0.0in,xshift=1.25in, minimum width=7ex] (pkey) {PRIMARY KEY} (pkey.west) edge node {} (table.340);
+
+\path[->]<4-> node[proctest, above of=nn1, yshift=0.0in, xshift=0.0in, minimum width=7ex] (unique) {UNIQUE} (unique.east) edge node {} (table);
+
+
+\path[->]<5-> node[proctest, below of=pkey, yshift=0.0in, xshift=0.0in, minimum width=7ex] (check) {CHECK} (check.west) edge node {} (table);
+
+\path[->]<6-> node[proctest, above of=pkey, yshift=0.0in, xshift=0.0in, minimum width=7ex] (fkey) {FORIEGN KEY} (fkey.west) edge node {} (table);
+
+\path[->]<6-> node[proc, above of=fkey, yshift=0.0in, xshift=1.5in,
+minimum width=7ex] (rtab) {} (rtab) edge node {} (fkey.east);
+
+
+
+\path<7-> (nn1.south)+(0,-.5) node (nn2) [proctest] {NOT NULL};
+\path<7-> [draw, ->] (nn2.east) -- node [above] {} (table.181);
 
 \end{tikzpicture}
 
