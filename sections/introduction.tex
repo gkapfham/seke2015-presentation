@@ -77,8 +77,9 @@
 
 \begin{frame}
   \frametitle{Performance of SBST}
-   \input{styles/kapfhammer-solarized-tikz-colors.tex}
-   \input{dials.tex}
+  \framesubtitle{\mbox{}}
+  \input{styles/kapfhammer-solarized-tikz-colors.tex}
+  \input{dials.tex}
 \end{frame}
 
 \setbeamercovered{invisible}
@@ -91,20 +92,20 @@
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \begin{tikzpicture}
     \path[use as bounding box] (-4.5,1) rectangle (10,-2);
-         
-          \path[->]<3> node[proc,below of=Requirements, 
+
+          \path[->]<3> node[proc,below of=Requirements,
           yshift=0.0in, xshift=-.75in, minimum width=10ex]
           (Theoretical) {\xmarkhide {Theoretical}};
 
-          \path[->]<4-> node[proc,below of=Requirements, 
+          \path[->]<4-> node[proc,below of=Requirements,
           yshift=-0.0in, xshift=-.75in, minimum width=10ex]
           (Theoretical) {\xmark {Theoretical}};
 
-          \path[->]<5> node[proc,below of=Requirements, 
+          \path[->]<5> node[proc,below of=Requirements,
           yshift=-0.0in, xshift=.75in, minimum width=10ex]
                       (Empirical) {\cmarkhide {Empirical}};
 
-          \path[->]<6-> node[proc,below of=Requirements, 
+          \path[->]<6-> node[proc,below of=Requirements,
           yshift=-0.0in, xshift=.75in, minimum width=10ex]
                       (Empirical) {\cmark {Empirical}};
 
