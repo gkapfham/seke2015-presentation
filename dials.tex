@@ -1,3 +1,6 @@
+%!TEX root=kinneer_seke.tex
+% mainfile: kinneer_seke.tex
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Arithmetic of the clock
 % Author: Juan Luis Varona
@@ -11,21 +14,34 @@
 % i and j from 0 to 11 by using arithmetic modulo 12,
 % i.e., the so called arithmetic of the clock.
 % 
+
 % The results of the products are represented both by
 % the color of the clock and by the hand.
 % Colors:
-\definecolor{clock0}{cmyk}{1,0,0,0} % cyan
+
+% \definecolor{clock0}{cmyk}{1,0,0,0} % cyan
+\definecolor{clock0}{HTML}{CB4B16}
+
 \definecolor{clock1}{cmyk}{0.75,0.25,0,0}
 \definecolor{clock2}{cmyk}{0.5,0.5,0,0}
-\definecolor{clock3}{cmyk}{0.25,0.75,0,0}
+
+% \definecolor{clock3}{cmyk}{0.25,0.75,0,0}
+\definecolor{clock3}{HTML}{DC322F}
+
 \definecolor{clock4}{cmyk}{0,1,0,0} % magenta
 \definecolor{clock5}{cmyk}{0,0.75,0.25,0}
 \definecolor{clock6}{cmyk}{0,0,5,0.5,0}
 \definecolor{clock7}{cmyk}{0,0.25,0.75,0}
 \definecolor{clock8}{cmyk}{0,0,1,0} % yellow
-\definecolor{clock9}{cmyk}{0.25,0,0.75,0}
+
+% \definecolor{clock9}{cmyk}{0.25,0,0.75,0}
+\definecolor{clock9}{HTML}{6C71C4}
+
 \definecolor{clock10}{cmyk}{0.5,0,0.5,0}
-\definecolor{clock11}{cmyk}{0.75,0,0.25,0}
+
+% \definecolor{clock11}{cmyk}{0.75,0,0.25,0}
+\definecolor{clock11}{HTML}{268BD2}
+
 % x pos, y pos, color, hand position
 \newcommand{\clock}[4]{%
   \begin{scope}[xshift=2.25*#1cm,yshift=2.25*#2cm]
@@ -43,8 +59,8 @@
 
 \setbeamercovered{invisible}
 
+\hspace*{.125in}
 \begin{overprint}[5.0in]
-
 \begin{tikzpicture}[scale=1]
 
     \path[use as bounding box] (-0.5,2.5) rectangle (10,-2);
@@ -69,7 +85,6 @@
     \clock{4}{0}{clock11}{10}; 
      \node[draw] at (9cm,-1.5cm) {Search Budget};
      }
-
 
 \end{tikzpicture}%
 
