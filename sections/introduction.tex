@@ -1,7 +1,6 @@
   \begin{frame}[t]
 
   \frametitle{Random Testing}
-  \framesubtitle{It is easy to randomly generate tests --- but how good are they?}
 
   \vspace*{.2in}
   \hspace{.6in}
@@ -36,8 +35,6 @@
 \begin{frame}[t]
 
   \frametitle{Search-Based Testing}
-  \framesubtitle{Use a fitness function to guide the search to ``good'' values}
-
   \vspace*{.25in}
   \hspace{.50in}
   \begin{minipage}{3.0in}
@@ -81,7 +78,7 @@
 
 \setbeamercovered{invisible}
 \begin{frame}
-    \frametitle{Search-based Software Testing}
+    \frametitle{Performance of SBST}
     \begin{center}
   \fontsize{60}{72}\selectfont
   O(\uncover<2->{?})
@@ -89,26 +86,22 @@
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \begin{tikzpicture}
     \path[use as bounding box] (-4.5,1) rectangle (10,-2);
-          \path[->]<3-> node[special,]
-                      (Requirements) at (1.5,.75)
-              {Set of Program Methods $M = \{ M_1, M_2, \ldots, M_{11}, M_{12} \}$};
-
-          \path[->]<4-4> node[proc,below of=Requirements, 
-          yshift=-0.5in, xshift=-.75in, minimum width=10ex]
+         
+          \path[->]<3> node[proc,below of=Requirements, 
+          yshift=0.0in, xshift=-.75in, minimum width=10ex]
           (Theoretical) {\xmarkhide {Theoretical}};
 
-          \path[->]<5-> node[proc,below of=Requirements, 
-          yshift=-0.5in, xshift=-.75in, minimum width=10ex]
+          \path[->]<4-> node[proc,below of=Requirements, 
+          yshift=-0.0in, xshift=-.75in, minimum width=10ex]
           (Theoretical) {\xmark {Theoretical}};
 
-          \path[->]<6-6> node[proc,below of=Requirements, 
-          yshift=-0.5in, xshift=.75in, minimum width=10ex]
+          \path[->]<5> node[proc,below of=Requirements, 
+          yshift=-0.0in, xshift=.75in, minimum width=10ex]
                       (Empirical) {\cmarkhide {Empirical}};
 
-          \path[->]<7-> node[proc,below of=Requirements, 
-          yshift=-0.5in, xshift=.75in, minimum width=10ex]
+          \path[->]<6-> node[proc,below of=Requirements, 
+          yshift=-0.0in, xshift=.75in, minimum width=10ex]
                       (Empirical) {\cmark {Empirical}};
 
   \end{tikzpicture}
 \end{frame}
-
