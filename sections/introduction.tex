@@ -6,30 +6,30 @@
   \vspace*{.2in}
   \hspace{.6in}
   \begin{minipage}{2.5in}
-\begin{figure}
-  \begin{center}
-  \resizebox{2.5in}{!}{
-    \begin{tikzpicture}
-      \begin{axis}[colorbar horizontal]
-        \addplot[only marks,scatter,
-          scatter src={mod(\coordindex,15)},samples=150]
-          {rand};
-      \end{axis}
-  \end{tikzpicture}}
-\end{center}
-\end{figure}
-\end{minipage}
+    \begin{figure}
+      \begin{center}
+        \resizebox{2.5in}{!}{
+          \begin{tikzpicture}
+            \begin{axis}[colorbar horizontal]
+              \addplot[only marks,scatter,
+                scatter src={mod(\coordindex,15)},samples=150]
+                {rand};
+            \end{axis}
+        \end{tikzpicture}}
+      \end{center}
+    \end{figure}
+  \end{minipage}
 
-\input{styles/kapfhammer-solarized-tikz-colors.tex}
-\begin{figure}
-\begin{centering}
-\begin{tikzpicture}
-    \path[->]<2-> node[special,]
-(Requirements) at (0,.75)
-{Easy to implement, but not very good};
-\end{tikzpicture}
-\end{centering}
-\end{figure}
+  \input{styles/kapfhammer-solarized-tikz-colors.tex}
+  \begin{figure}
+    \begin{centering}
+      \begin{tikzpicture}
+        \path[->]<2-> node[special,]
+          (Requirements) at (0,.75)
+          {Easy to implement, but not very good};
+      \end{tikzpicture}
+    \end{centering}
+  \end{figure}
 
 \end{frame}
 
