@@ -85,27 +85,28 @@
 \setbeamercovered{invisible}
 \begin{frame}[label=current]
   \frametitle{Performance of SBST}
+
+  \vspace*{.5in}
   \begin{center}
-    \fontsize{60}{72}\selectfont
+    \fontsize{90}{72}\selectfont
     O(\uncover<2->{?})
   \end{center}
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \begin{tikzpicture}
     \path[use as bounding box] (-4.5,1) rectangle (10,-2);
 
-          \path[->]<3> node[proc,below of=Requirements,
-          yshift=0.0in, xshift=-.75in, minimum width=10ex]
-          (Theoretical) {\xmarkhide {Theoretical}};
+          \path[->]<3> node[plain, text width=20ex]
+          (Theoretical) (1.5,.75) {\large \xmarkhide {Theoretical}};
 
-          \path[->]<4-> node[proc,below of=Requirements,
+          \path[->]<4-> node[plain,below of=Requirements,
           yshift=-0.0in, xshift=-.75in, minimum width=10ex]
           (Theoretical) {\xmark {Theoretical}};
 
-          \path[->]<5> node[proc,below of=Requirements,
+          \path[->]<5> node[plain,below of=Requirements,
           yshift=-0.0in, xshift=.75in, minimum width=10ex]
                       (Empirical) {\cmarkhide {Empirical}};
 
-          \path[->]<6-> node[proc,below of=Requirements,
+          \path[->]<6-> node[plain,below of=Requirements,
           yshift=-0.0in, xshift=.75in, minimum width=10ex]
                       (Empirical) {\cmark {Empirical}};
 
