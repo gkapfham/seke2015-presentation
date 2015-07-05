@@ -5,7 +5,7 @@
   \hspace{-.25in}
   \begin{center}
 
-    \begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+    \begin{tikzpicture}[thick,scale=1, every node/.style={scale=1.2}]
 
       \path[use as bounding box] (-3.0,2.5) rectangle (10,-2);
 
@@ -31,11 +31,11 @@
       xshift=0.0in,minimum width=11ex]
       (runtime2) {Runtime = 2};
 
-      \path[->]<8-> node[iopass, below of=input1, yshift=-0.6in,
+      \path[->]<8-> node[iopass, below of=input1, yshift=-0.8in,
       xshift=0.75in,minimum width=11ex]
       (ratio) {Ratio $\approx$ 2};
 
-      \path[->]<9-> node[special, below of=ratio, yshift=-0.3in,
+      \path[->]<9-> node[special, below of=ratio, yshift=-0.1in,
       xshift=0.0in,minimum width=11ex]
       (takeaway) {Linear --- O(n)};
 
