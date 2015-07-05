@@ -83,7 +83,7 @@
 \end{frame}
 
 \setbeamercovered{invisible}
-\begin{frame}[label=current]
+\begin{frame}%[label=current]
   \frametitle{Performance of SBST}
   \framesubtitle{\mbox{}}
 
@@ -92,6 +92,7 @@
     \fontsize{90}{72}\selectfont
     O(\uncover<2->{\textcolor{solarizedViolet}{?}})
   \end{center}
+
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \begin{tikzpicture}
     \path[use as bounding box] (-5.5,1) rectangle (10,-2);
