@@ -1,6 +1,8 @@
+%!TEX root=kinneer_seke.tex
+% mainfile: kinneer_seke.tex
+
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \hspace{-.25in}
-
   \begin{center}
 
     \begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
@@ -14,29 +16,28 @@
       (input1) at (0,1.5) {Input};
 
       \path[->]<3-> node[io, below of=input1, yshift=-0.3in,
-      xshift=0.0in,minimum width=11ex] 
+      xshift=0.0in,minimum width=11ex]
       (runtime1) {Runtime = 1};
 
-
       \path[->]<4,7-> node[proc, right of=input1, yshift=0.0in,
-      xshift=1.25in,minimum width=7ex,minimum height=4*\heightof{Input}] 
+      xshift=1.25in,minimum width=7ex,minimum height=4*\heightof{Input}]
       (input2) {Input};
 
       \path[->]<5-6> node[proctest, right of=input1, yshift=0.0in,
-      xshift=1.25in,minimum width=7ex,minimum height=4*\heightof{Input}] 
+      xshift=1.25in,minimum width=7ex,minimum height=4*\heightof{Input}]
       (input2) {Input};
 
       \path[->]<6-> node[io, below of=input2, yshift=-0.3in,
-      xshift=0.0in,minimum width=11ex] 
+      xshift=0.0in,minimum width=11ex]
       (runtime2) {Runtime = 2};
 
-      \path[->]<8-> node[io, below of=input1, yshift=-0.6in,
-      xshift=0.75in,minimum width=11ex] 
-      (ratio) {Ratio = 2};
+      \path[->]<8-> node[iopass, below of=input1, yshift=-0.6in,
+      xshift=0.75in,minimum width=11ex]
+      (ratio) {Ratio $\approx$ 2};
 
       \path[->]<9-> node[special, below of=ratio, yshift=-0.3in,
-      xshift=0.0in,minimum width=11ex] 
-      (takeaway) {O(n)};
+      xshift=0.0in,minimum width=11ex]
+      (takeaway) {Linear --- O(n)};
 
     \end{tikzpicture}
 
