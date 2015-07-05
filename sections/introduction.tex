@@ -90,25 +90,25 @@
   \vspace*{.3in}
   \begin{center}
     \fontsize{90}{72}\selectfont
-    O(\uncover<2->{?})
+    O(\uncover<2->{\textcolor{solarizedViolet}{?}})
   \end{center}
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \begin{tikzpicture}
     \path[use as bounding box] (-5.5,1) rectangle (10,-2);
 
           \path[->]<3> node[plain, text width=20ex]
-          (Theoretical) at (-2.75,-.25) {\huge \xmarkhide {Analytical}};
+          (Theoretical) at (-2.75,-.25) {\Huge \xmarkhide {Analytical}};
 
           \path[->]<4-> node[plain, text width=20ex]
-          (Theoretical) at (-2.75,-.25) {\huge \xmark {Analytical}};
+          (Theoretical) at (-2.75,-.25) {\Huge \xmark {Analytical}};
 
           \path[->]<5> node[plain,right of=Theoretical,
           yshift=-0.0in, xshift=1.75in, minimum width=20ex]
-                      (Empirical) {\huge \cmarkhide {Empirical}};
+                      (Empirical) {\Huge \cmarkhide {Empirical}};
 
           \path[->]<6-> node[plain,right of=Theoretical,
           yshift=-0.0in, xshift=1.75in, minimum width=20ex]
-                      (Empirical) {\huge \cmark {Empirical}};
+                      (Empirical) {\Huge \cmark {Empirical}};
 
   \end{tikzpicture}
 \end{frame}
