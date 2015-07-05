@@ -97,25 +97,18 @@
     \path[use as bounding box] (-5.5,1) rectangle (10,-2);
 
           \path[->]<3> node[plain, text width=20ex]
-          (Theoretical) at (-2,1.25) {\huge \xmarkhide {Theoretical}};
+          (Theoretical) at (-2.75,-.25) {\huge \xmarkhide {Analytical}};
 
           \path[->]<4-> node[plain, text width=20ex]
-          (Theoretical) at (-2,1.25) {\huge \xmark {Theoretical}};
+          (Theoretical) at (-2.75,-.25) {\huge \xmark {Analytical}};
 
           \path[->]<5> node[plain,right of=Theoretical,
           yshift=-0.0in, xshift=1.75in, minimum width=20ex]
                       (Empirical) {\huge \cmarkhide {Empirical}};
 
-          \path[->]<5> node[plain,right of=Theoretical,
+          \path[->]<6-> node[plain,right of=Theoretical,
           yshift=-0.0in, xshift=1.75in, minimum width=20ex]
                       (Empirical) {\huge \cmark {Empirical}};
-
-          % \path[->]<6-> node[plain,right of=Theoretical,
-          % yshift=-0.0in, xshift=.75in, minimum width=10ex]
-          %             (Empirical) {\cmark {Empirical}};
-
-          % \path[->]<5> node[plain, text width=20ex]
-          % (Empirical) (1.5,.75) {\huge \cmarkhide {Empirical}};
 
   \end{tikzpicture}
 \end{frame}
