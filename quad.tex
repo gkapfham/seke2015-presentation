@@ -1,6 +1,9 @@
 %!TEX root=kinneer_seke.tex
 % mainfile: kinneer_seke.tex
 
+% 51.48 / 12.63
+% 4.07600
+
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
 
   \hspace{-.25in}
@@ -18,7 +21,7 @@
 
       \path[->]<2-> node[io, below of=input1, yshift=-0.3in,
       xshift=0.0in,minimum width=11ex]
-      (runtime1) {Time = 1};
+      (runtime1) {Time = 12.63};
 
       \path[->]<1-2,4-> node[proc, right of=input1, yshift=0.0in,
       xshift=1.25in,minimum width=7ex,minimum height=4*\heightof{Input}]
@@ -30,7 +33,7 @@
 
       \path[->]<3-> node[io, below of=input2, yshift=-0.3in,
       xshift=0.0in,minimum width=11ex]
-      (runtime2) {Time = 4};
+      (runtime2) {Time = 51.48};
 
       \path[->]<4-> node[iopass, below of=input1, yshift=-0.8in,
       xshift=0.75in,minimum width=11ex]
