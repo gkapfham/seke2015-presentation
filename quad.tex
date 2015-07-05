@@ -6,7 +6,7 @@
   \hspace{-.25in}
   \begin{center}
 
-    \begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+    \begin{tikzpicture}[thick,scale=1, every node/.style={scale=1.2}]
 
       \path[use as bounding box] (-3.0,2.5) rectangle (10,-2);
 
@@ -18,7 +18,7 @@
 
       \path[->]<2-> node[io, below of=input1, yshift=-0.3in,
       xshift=0.0in,minimum width=11ex]
-      (runtime1) {Runtime = 1};
+      (runtime1) {Time = 1};
 
       \path[->]<1-2,4-> node[proc, right of=input1, yshift=0.0in,
       xshift=1.25in,minimum width=7ex,minimum height=4*\heightof{Input}]
@@ -30,15 +30,15 @@
 
       \path[->]<3-> node[io, below of=input2, yshift=-0.3in,
       xshift=0.0in,minimum width=11ex]
-      (runtime2) {Runtime = 4};
+      (runtime2) {Time = 4};
 
-      \path[->]<4-> node[io, below of=input1, yshift=-0.6in,
+      \path[->]<4-> node[iopass, below of=input1, yshift=-0.8in,
       xshift=0.75in,minimum width=11ex]
-      (ratio) {Ratio = 4};
+      (ratio) {Ratio $\approx$ 4};
 
-      \path[->]<5-> node[special, below of=ratio, yshift=-0.3in,
+      \path[->]<5-> node[special, below of=ratio, yshift=-0.1in,
       xshift=0.0in,minimum width=11ex]
-      (takeaway) {O($n^{2})$};
+      (takeaway) {Quadratic --- O($n^{2})$};
 
     \end{tikzpicture}
 
