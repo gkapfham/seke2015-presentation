@@ -75,7 +75,7 @@
 
 \end{frame}
 
-\begin{frame}[label=current]
+\begin{frame}
   \frametitle{Performance of SBST}
   \framesubtitle{\mbox{}}
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
@@ -85,30 +85,37 @@
 \setbeamercovered{invisible}
 \begin{frame}[label=current]
   \frametitle{Performance of SBST}
+  \framesubtitle{\mbox{}}
 
-  \vspace*{.5in}
+  \vspace*{.3in}
   \begin{center}
     \fontsize{90}{72}\selectfont
     O(\uncover<2->{?})
   \end{center}
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \begin{tikzpicture}
-    \path[use as bounding box] (-4.5,1) rectangle (10,-2);
+    \path[use as bounding box] (-5.5,1) rectangle (10,-2);
 
           \path[->]<3> node[plain, text width=20ex]
-          (Theoretical) (1.5,.75) {\large \xmarkhide {Theoretical}};
+          (Theoretical) at (-2,1.25) {\huge \xmarkhide {Theoretical}};
 
-          \path[->]<4-> node[plain,below of=Requirements,
-          yshift=-0.0in, xshift=-.75in, minimum width=10ex]
-          (Theoretical) {\xmark {Theoretical}};
+          \path[->]<4-> node[plain, text width=20ex]
+          (Theoretical) at (-2,1.25) {\huge \xmark {Theoretical}};
 
-          \path[->]<5> node[plain,below of=Requirements,
-          yshift=-0.0in, xshift=.75in, minimum width=10ex]
-                      (Empirical) {\cmarkhide {Empirical}};
+          \path[->]<5> node[plain,right of=Theoretical,
+          yshift=-0.0in, xshift=1.75in, minimum width=20ex]
+                      (Empirical) {\huge \cmarkhide {Empirical}};
 
-          \path[->]<6-> node[plain,below of=Requirements,
-          yshift=-0.0in, xshift=.75in, minimum width=10ex]
-                      (Empirical) {\cmark {Empirical}};
+          \path[->]<5> node[plain,right of=Theoretical,
+          yshift=-0.0in, xshift=1.75in, minimum width=20ex]
+                      (Empirical) {\huge \cmark {Empirical}};
+
+          % \path[->]<6-> node[plain,right of=Theoretical,
+          % yshift=-0.0in, xshift=.75in, minimum width=10ex]
+          %             (Empirical) {\cmark {Empirical}};
+
+          % \path[->]<5> node[plain, text width=20ex]
+          % (Empirical) (1.5,.75) {\huge \cmarkhide {Empirical}};
 
   \end{tikzpicture}
 \end{frame}
