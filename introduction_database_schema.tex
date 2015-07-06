@@ -8,7 +8,7 @@
   \frametitle{Database Schemas}
   \framesubtitle{\mbox{}}
 
-  \hspace*{-.5in}
+  \hspace*{-.65in}
   \begin{minipage}{5in}
   \begin{center}
 
@@ -75,50 +75,50 @@
 
         % Highlight the schema and tell some of the details
 
-        \path[->]<5-8> node[special, below of=Dbms, text width=12ex,
+        \path[->]<5-8> node[procnew, below of=Dbms, text width=12ex,
                       yshift=-.1in, xshift=-.65in]
                       (Schema) {Schema};
 
-        \path[->]<5-8> node[special, below of=Schema, text width=18ex,
+        \path[->]<5-8> node[procnew, below of=Schema, text width=18ex,
                       yshift=0in, xshift=-.5in]
                       (Integrity) {Integrity Constraints};
 
-        \path[->]<6-8> node[special, below of=Integrity,
+        \path[->]<6-8> node[procnew, below of=Integrity,
                       yshift=-.05in, xshift=-1.5in]
                       (Primary) {\sql{PRIMARY KEY}}
                       (Integrity) edge node {} (Primary);
 
-        \path[->]<7-8> node[special, below of=Integrity,
+        \path[->]<7-8> node[procnew, below of=Integrity,
                       yshift=-.05in, xshift=0in]
                       (Foreign) {\sql{FOREIGN KEY}}
                       (Integrity) edge node {} (Foreign);
 
-        \path[->]<8-8> node[special, below of=Integrity,
+        \path[->]<8-8> node[procnew, below of=Integrity,
                       yshift=-.05in, xshift=1.5in]
                       (Check) {Arbitrary \sql{CHECK}}
                       (Integrity) edge node {} (Check);
 
         % Show the details of the database state
 
-        \path[->]<9-12> node[special, below of=Dbms, text width=12ex,
+        \path[->]<9-12> node[procnew, below of=Dbms, text width=12ex,
                       yshift=-.1in, xshift=.65in]
                       (State) {State};
 
-        \path[->]<9-12> node[special, below of=Schema, text width=20ex,
+        \path[->]<9-12> node[procnew, below of=Schema, text width=20ex,
                       yshift=0in, xshift=-.5in]
                       (Components) {Relational Components};
 
-        \path[->]<10-12> node[special, below of=Components,
+        \path[->]<10-12> node[procnew, below of=Components,
                       yshift=-.05in, xshift=-1.5in]
                       (Tables) {Tables}
                       (Components) edge node {} (Tables);
 
-        \path[->]<11-12> node[special, below of=Integrity,
+        \path[->]<11-12> node[procnew, below of=Integrity,
                       yshift=-.05in, xshift=0in]
                       (Rows) {Rows}
                       (Components) edge node {} (Rows);
 
-        \path[->]<12-12> node[special, below of=Integrity,
+        \path[->]<12-12> node[procnew, below of=Integrity,
                       yshift=-.05in, xshift=1.5in]
                       (Columns) {Columns}
                       (Components) edge node {} (Columns);
