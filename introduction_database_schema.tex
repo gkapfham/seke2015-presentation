@@ -1,0 +1,236 @@
+%!TEX root=kinneer_seke.tex
+% mainfile: kinneer_seke.tex
+
+% \begin{frame}[t]{Database Schemas}
+
+\input{styles/kapfhammer-solarized-tikz-colors.tex}
+\begin{frame}[label=current]
+  \frametitle{Database Schemas}
+  \framesubtitle{\mbox{}}
+
+  \hspace*{-.5in}
+  \begin{minipage}{5in}
+  \begin{center}
+
+    \begin{minipage}{4.5in}
+
+    % Derby.png
+    \pgfdeclareimage[height=4ex]{Derby}{Derby.png}
+
+    % HSQLDB.png
+    \pgfdeclareimage[height=3.5ex]{Hsqldb}{HSQLDB.png}
+
+    % IBMDB2.png
+    \pgfdeclareimage[height=4ex]{Db2}{IBMDB2.png}
+
+    % MySQL.png
+    \pgfdeclareimage[height=4ex]{My}{mysql-logo-1.jpg}
+
+    % Postgres.png
+    \pgfdeclareimage[height=10ex]{Postgres}{logo_w_elephant.png}
+
+    % SQLite.png
+    \pgfdeclareimage[height=8ex]{Sqlite}{SQLite.png}
+
+    % splash-mac.png
+    \pgfdeclareimage[height=12ex]{Spree}{splash-mac.png}
+
+    \begin{figure}
+
+    \begin{center}
+
+      \begin{tikzpicture}[node distance=1cm, auto,>=stealth, thick]
+
+        \path[use as bounding box] (-2,3.5) rectangle (10,-2);
+
+        %% (Software) edge node {} (Features);
+
+        %%%%% 1
+
+        % The relational database management system
+        \path[->]<1-> node[proc, text width=20ex]
+        (Dbms) at (6.75,1) {Relational Database Management System};
+
+        \path[->]<1-> node[above of=Dbms,
+                      yshift=.25in, xshift=0in,]
+                      (Postgres) {\pgfuseimage{Postgres}};
+
+        \path[->]<2-> node[left of=Dbms,
+                      yshift=0in, xshift=-2.5in,]
+                      (Spree) {\pgfuseimage{Spree}}
+                      (Spree) edge node {} (Dbms);
+
+        \path[->]<2-> node[below of=Spree, text width=12ex,
+                      yshift=-.2in, xshift=0in]
+                      (Ecommerce) {\begin{minipage}{12ex}{\centering E-commerce}\end{minipage}};
+
+        % The state and structure of the database
+        \path[->]<3-> node[proc, below of=Dbms, text width=12ex,
+                      yshift=-.1in, xshift=-.65in]
+                      (Schema) {Schema};
+
+        \path[->]<4-> node[proc, below of=Dbms, text width=12ex,
+                      yshift=-.1in, xshift=.65in]
+                      (State) {State};
+
+        % Highlight the schema and tell some of the details
+
+        \path[->]<5-8> node[special, below of=Dbms, text width=12ex,
+                      yshift=-.1in, xshift=-.65in]
+                      (Schema) {Schema};
+
+        \path[->]<5-8> node[special, below of=Schema, text width=18ex,
+                      yshift=0in, xshift=-.5in]
+                      (Integrity) {Integrity Constraints};
+
+        \path[->]<6-8> node[special, below of=Integrity,
+                      yshift=-.05in, xshift=-1.5in]
+                      (Primary) {\sql{PRIMARY KEY}}
+                      (Integrity) edge node {} (Primary);
+
+        \path[->]<7-8> node[special, below of=Integrity,
+                      yshift=-.05in, xshift=0in]
+                      (Foreign) {\sql{FOREIGN KEY}}
+                      (Integrity) edge node {} (Foreign);
+
+        \path[->]<8-8> node[special, below of=Integrity,
+                      yshift=-.05in, xshift=1.5in]
+                      (Check) {Arbitrary \sql{CHECK}}
+                      (Integrity) edge node {} (Check);
+
+        % Show the details of the database state
+
+        \path[->]<9-12> node[special, below of=Dbms, text width=12ex,
+                      yshift=-.1in, xshift=.65in]
+                      (State) {State};
+
+        \path[->]<9-12> node[special, below of=Schema, text width=20ex,
+                      yshift=0in, xshift=-.5in]
+                      (Components) {Relational Components};
+
+        \path[->]<10-12> node[special, below of=Components,
+                      yshift=-.05in, xshift=-1.5in]
+                      (Tables) {Tables}
+                      (Components) edge node {} (Tables);
+
+        \path[->]<11-12> node[special, below of=Integrity,
+                      yshift=-.05in, xshift=0in]
+                      (Rows) {Rows}
+                      (Components) edge node {} (Rows);
+
+        \path[->]<12-12> node[special, below of=Integrity,
+                      yshift=-.05in, xshift=1.5in]
+                      (Columns) {Columns}
+                      (Components) edge node {} (Columns);
+
+        % the database schema is correct
+
+        % \path[->]<13-> node[feature, below of=Integrity,
+        %               yshift=.2in, xshift=.1in]
+        %               (Status) {The Relational Schema is Working Correctly};
+
+        % \path[->]<14-14> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\sql{INSERT} \textcolor{white}{\cmark}} (Dbms);
+
+        % \path[->]<15-16> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\sql{INSERT} \textcolor{black}{\cmark}} (Dbms);
+
+        % \path[->]<15-16> node[featurecurve, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=-.65in]
+        %               (Schema) {Schema};
+
+        % \path[->]<16-16> node[featurecurve, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=.65in]
+        %               (State) {State};
+
+        % \path[->]<17-17> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\sql{INSERT} \textcolor{white}{\xmark}} (Dbms);
+
+        % \path[->]<18-19> node[featurecurve, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=-.65in]
+        %               (Schema) {Schema};
+
+        % \path[->]<18-19> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\sql{INSERT} \textcolor{black}{\xmark}} (Dbms);
+
+        % \path[->]<19-19> node[featurecurve, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=.65in]
+        %               (State) {State};
+
+        % the database schema is not correct
+
+        % \path[->]<20-> node[corrupted, below of=Integrity,
+        %               yshift=.2in, xshift=.1in]
+        %               (Status) {The Relational Schema is {\em Not} Working Correctly};
+
+        % \path[->]<21-21> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\cmark \sql{INSERT} \textcolor{white}{\xmark}} (Dbms);
+
+        % \path[->]<22-23> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\cmark \sql{INSERT} \textcolor{black}{\xmark}} (Dbms);
+
+        % \path[->]<22-23> node[corrupted, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=-.65in]
+        %               (Schema) {Schema};
+
+        % \path[->]<23-23> node[corrupted, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=.65in]
+        %               (State) {State};
+
+        % \path[->]<24-24> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\xmark \sql{INSERT} \textcolor{white}{\cmark}} (Dbms);
+
+        % \path[->]<25-26> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\xmark \sql{INSERT} \textcolor{black}{\cmark}} (Dbms);
+
+        % \path[->]<25-> node[corrupted, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=-.65in]
+        %               (Schema) {Schema};
+
+        % \path[->]<26-> node[corrupted, below of=Dbms, text width=12ex,
+        %               yshift=-.1in, xshift=.65in]
+        %               (State) {State};
+
+        % \path[->]<27-> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\sql{SELECT} \textcolor{black}{\cmark}} (Dbms);
+
+        % \path[->]<28-> node[left of=Dbms,
+        %               yshift=0in, xshift=-2.5in,]
+        %               (Spree) {\pgfuseimage{Spree}}
+        %               (Spree) edge node {\sql{SELECT} \textcolor{black}{\cmark}} (Dbms)
+        %               (Dbms) edge node {\sql{RESULT} \textcolor{black}{\xmark}} (Spree);
+
+        % \path[->]<29-> node[above of=Spree,
+        %                yshift=.2in, xshift=.1in]
+        %                (Bad) {Not working correctly!};
+
+    \end{tikzpicture}
+
+        \end{center}
+
+        \end{figure}
+
+      \end{minipage}
+
+  \end{center}
+  \end{minipage}
+
+\end{frame}
