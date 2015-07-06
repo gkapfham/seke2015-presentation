@@ -91,12 +91,14 @@
 \hspace*{.33in}
 \begin{tikzpicture}
   \path[use as bounding box] (-4.5,1) rectangle (10,-2);
-  \path[->]<7-> node[special,]
+  \path[->]<7-> node[special, text width=26ex]
     (Requirements) at (0,0)
-    {How do parameter values influence the efficiency of SBST?};
-  \path[->]<8-> node[special, below of=Requirements,
-    yshift=-.05in, xshift=0in]
-    (Comment) {Do more effective adequacy criteria require addtional runtime?};
-\end{tikzpicture}%
+    {{\Large How do parameter values influence the efficiency of SBST?}};
+
+  % \path[->]<8-> node[special, below of=Requirements,
+  %   yshift=-.05in, xshift=0in]
+  %   (Comment) {Do more effective adequacy criteria require addtional runtime?};
+
+\end{tikzpicture}
 
 \end{overprint}
