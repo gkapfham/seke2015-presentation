@@ -1,0 +1,103 @@
+%!TEX root=kinneer_seke.tex
+% mainfile: kinneer_seke.tex
+
+\input{styles/kapfhammer-solarized-tikz-colors.tex}
+\begin{frame}[label=current]
+  \frametitle{Relational Databases}
+  \framesubtitle{\mbox{}}
+
+  \hspace*{-.5in}
+  \begin{minipage}{5in}
+  \begin{center}
+
+    \vspace*{-.25in}
+    \begin{minipage}{4.5in}
+
+    % Derby.png
+    \pgfdeclareimage[height=4ex]{Derby}{Derby.png}
+
+    % HSQLDB.png
+    \pgfdeclareimage[height=3.5ex]{Hsqldb}{HSQLDB.png}
+
+    % IBMDB2.png
+    \pgfdeclareimage[height=4ex]{Db2}{IBMDB2.png}
+
+    % MySQL.png
+    \pgfdeclareimage[height=4ex]{My}{mysql-logo-1.jpg}
+
+    % Postgres.png
+    \pgfdeclareimage[height=10ex]{Postgres}{logo_w_elephant.png}
+
+    % SQLite.png
+    \pgfdeclareimage[height=8ex]{Sqlite}{SQLite.png}
+
+    \begin{figure}
+
+    \begin{center}
+
+      \begin{tikzpicture}[node distance=1cm, auto,>=stealth, thick]
+
+        \path[use as bounding box] (-2,3.5) rectangle (10,-2);
+
+        %% (Software) edge node {} (Features);
+
+        %%%%% 1
+
+        % The execution environment
+        \path[->]<1-> node[proc]
+        (Deploy) at (4,3) {Deployment Locations for Databases};
+
+        % Draw the three options for the deployment
+
+        %% 1
+        \path[->]<2-> node[proc, below of=Deploy, text width=12ex,
+                      yshift=-.5in, xshift=-1.75in]
+                      (Server) {Database Application Server}
+        (Deploy) edge node {} (Server);
+
+        \path[->]<2-> node[below of=Server,
+          yshift=-.4in, xshift=0in]
+        (Postgres) {\pgfuseimage{Postgres}};
+
+        %% 2
+        \path[->]<3-> node[proc, below of=Deploy, text width=12ex,
+                      yshift=-.5in, xshift=0in]
+                      (Mobile) {Mobile Phone or Tablet}
+        (Deploy) edge node {} (Mobile);
+
+        \path[->]<3-> node[below of=Mobile,
+          yshift=-.2in, xshift=0in]
+        (Sqlite) {\pgfuseimage{Sqlite}};
+
+        %% 3
+        \path[->]<4-> node[proc, below of=Deploy, text width=12ex,
+                      yshift=-.5in, xshift=1.75in]
+                      (Office) {Office and Productivity Software}
+        (Deploy) edge node {} (Office);
+
+        \path[->]<4-> node[below of=Office,
+          yshift=-.25in, xshift=0in]
+        (Hsqldb) {\pgfuseimage{Hsqldb}};
+
+        % Areas where the DBMS has recently been used
+        \path[->]<5-> node[procold, below of=Sqlite, text width=12ex,
+                      yshift=-.225in, xshift=-.75in]
+                      (Government) {Government};
+
+        \path[->]<6-> node[procold, below of=Sqlite, text width=12ex,
+                      yshift=-.225in, xshift=.75in]
+                      (Astro) {Astrophysics};
+
+
+    \end{tikzpicture}
+
+        \end{center}
+
+        \end{figure}
+
+      \end{minipage}
+
+  \end{center}
+  \end{minipage}
+
+\end{frame}
