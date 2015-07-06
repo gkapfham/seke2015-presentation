@@ -1,0 +1,72 @@
+%!TEX root=kinneer_seke.tex
+% mainfile: kinneer_seke.tex
+
+% \begin{frame}[t]{Need for Relational Schema Testing}
+
+\input{styles/kapfhammer-solarized-tikz-colors.tex}
+\begin{frame}[label=current]
+  \frametitle{Database Testing}
+  \framesubtitle{\mbox{}}
+
+  \hspace*{-.5in}
+  \begin{minipage}{5in}
+  \begin{center}
+
+    \begin{minipage}{4.5in}
+
+    \begin{figure}
+
+    \begin{center}
+
+      \begin{tikzpicture}[node distance=1cm, auto,>=stealth, thick]
+
+        \path[use as bounding box] (-2,3.5) rectangle (10,-2);
+
+        %%%%% 1
+
+        %% of the $611 billion annual loss, as reported by The Data
+        %% Warehouse Institute, experienced by North American
+        %% organizations resulting from poor data qualit
+
+        % There is a huge cost
+        \path[->]<1-> node[proc, text width=54ex]
+        (Loss) at (4,2.75)
+             {The Data Warehouse Institute reports that North American
+               organizations experience a \$611 billion annual loss due to poor data quality};
+
+             %% I believe that the virtual absence of discussion about
+             %% testing within the data management community is the
+             %% primary cause of the $611 billion annual loss, as
+             %% reported by The Data Warehouse Institute, experienced by
+             %% North American organizations resulting from poor data
+             %% quality. So this month I've decided to describe what you
+             %% should consider testing in a database.
+
+             %% Let's start with some terminology. Database testing is
+             %% the act of validating the contents, schema, and
+             %% functionality within a database.
+
+        \path[->]<2-> node[proc, below of=Loss, text width=48ex,
+          yshift=-.5in, xshift=0in] (Ambler) {Scott W. Ambler argues
+          that the ``virtual \\absence'' of database testing --- the
+          validation of the contents, schema, and functionality of the
+          database --- is the primary cause of this loss};
+
+        \path[->]<3-> node[prochighlight, below of=Ambler, text width=48ex,
+          yshift=-.5in, xshift=0in] (SchemaAnalyst)
+        {This paper presents {\em SchemaAnalyst}, a search-based
+          system for testing the complex \\ integrity constraints in
+          relational schemas};
+
+    \end{tikzpicture}
+
+        \end{center}
+
+        \end{figure}
+
+      \end{minipage}
+
+  \end{center}
+  \end{minipage}
+
+\end{frame}
