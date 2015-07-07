@@ -46,7 +46,8 @@
   \begin{figure}
     \begin{centering}
       \begin{tikzpicture}
-        \path[->]<1-> node[special,]
+        \path[use as bounding box] (-5.35,1.5) rectangle (10,-3);
+        \path[->]<2-> node[special,]
           (Requirements) at (0,1.75)
           {More effective criteria require additional runtime};
       \end{tikzpicture}
@@ -67,7 +68,8 @@
   \begin{figure}
     \begin{centering}
       \begin{tikzpicture}
-        \path[->]<1-> node[special,]
+        \path[use as bounding box] (-5.35,.5) rectangle (10,-3);
+        \path[->]<2-> node[special,]
           (Requirements) at (0,.75)
           {More effective generators can also be more efficient};
       \end{tikzpicture}
