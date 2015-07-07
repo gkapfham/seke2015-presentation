@@ -16,28 +16,23 @@
         };
 
       \path[->]<2-> node[proctest, right of=doubler, yshift=0.45in,
-      xshift=1.25in,minimum width=21ex] 
+      xshift=1.25in,minimum width=21ex]
       (exps) {467 Experiments};
 
     \path[->]<3-> node[proc, below of=exps, yshift=0.1in,
-      xshift=0in,minimum width=21ex] 
+      xshift=0in,minimum width=21ex]
       (first) {$56\%$ Killed};
 
     \path[->]<4-> node[proc, below of=first, yshift=0.1in,
-      xshift=0in,minimum width=21ex] 
+      xshift=0in,minimum width=21ex]
       (seccond) {$72\ O(n^{2})$};
 
     \path[->]<5-> node[special, below of=seccond, yshift=0.10in,
-      xshift=0in,minimum width=21ex] 
+      xshift=0in,minimum width=21ex]
       (third) {$10\ O(n^{3})$};
-          
+
     \path[->]<6-> node[special, below of=third, yshift=-0.10in,
-      xshift=-0.75in,minimum width=21ex] 
+      xshift=-0.75in,minimum width=21ex]
       (takeaway) {\textit{SchemaAnalyst} $\in O(n^{3})$ or worse for tables};
-
-
-
-
-
 
 \end{tikzpicture}
