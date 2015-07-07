@@ -1,3 +1,4 @@
+\vspace*{.2in}
 \begin{tikzpicture}[node distance=0cm, auto, thick]
 
         \path[use as bounding box] (-2,4.5) rectangle (10,-2);
@@ -26,13 +27,13 @@
         (Software) edge node {} (Environment);
 
         \path[->]<6-> node[specialGreen, below of=Software,
-                      yshift=-1.5in,text width=30ex]
+                      yshift=-1.6in,text width=46ex]
                       (Quotations)
-                      {Over 2,000 combinations!};
+                      {Over 2,000 unique combinations of parameters!};
 
-        \path[->]<7-> node[specialGreen, below of=Quotations,
-                      yshift=-0.4in,text width=30ex]
+        \path[->]<7-> node[specialGreen, above of=Software,
+                      yshift=0.65in,text width=30ex]
                       (conclusion)
-                      {Experiments ran on HPC cluster with 3440 cores};
+                      {Experiments ran on HPC cluster with 3,440 cores};
 
 \end{tikzpicture}
