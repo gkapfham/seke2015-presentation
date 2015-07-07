@@ -5,29 +5,35 @@
   \frametitle{Random Testing}
   \framesubtitle{\mbox{}}
 
-  \hspace{.6in}
-  \begin{minipage}{2.5in}
-    \begin{figure}
-      \begin{center}
-        \resizebox{2.5in}{!}{
-          \begin{tikzpicture}
-            \begin{axis}[colorbar horizontal]
-              \addplot[only marks,scatter,
-                scatter src={mod(\coordindex,15)},samples=150]
-                {rand};
-            \end{axis}
-        \end{tikzpicture}}
-      \end{center}
-    \end{figure}
-  \end{minipage}
+  \begin{figure}
+    \hspace{-.10in}
+    \includegraphics[width=.60\textwidth]{randomtesting}
+  \end{figure}
 
-  \vspace*{.1in}
+  % \hspace{.6in}
+  % \begin{minipage}{2.5in}
+  %   \begin{figure}
+  %     \begin{center}
+  %       \resizebox{2.5in}{!}{
+  %         \begin{tikzpicture}
+  %           \begin{axis}[colorbar horizontal]
+  %             \addplot[only marks,scatter,
+  %               scatter src={mod(\coordindex,15)},samples=150]
+  %               {rand};
+  %           \end{axis}
+  %       \end{tikzpicture}}
+  %     \end{center}
+  %   \end{figure}
+  % \end{minipage}
+
+  % \vspace*{-.11in}
   \input{styles/kapfhammer-solarized-tikz-colors.tex}
   \begin{figure}
     \begin{centering}
       \begin{tikzpicture}
+        \path[use as bounding box] (-5.15,-.5) rectangle (10,-3);
         \path[->]<2-> node[special,]
-          (Requirements) at (0,1.0)
+          (Requirements) at (0,0)
           {Easy to implement --- and yet not always very effective!};
       \end{tikzpicture}
     \end{centering}
