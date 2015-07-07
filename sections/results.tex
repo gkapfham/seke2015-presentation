@@ -32,41 +32,45 @@
 % \input{RegTree.tex}
 % \end{frame}
 
-\begin{frame}
-\frametitle{Criterion}
-\framesubtitle{\mbox{}}
-\begin{figure}
-\includegraphics[width=\textwidth]{CriterionBoxDarker}
-\end{figure}
-\input{styles/kapfhammer-solarized-tikz-colors.tex}
-\vspace{-.10in}
-\begin{figure}
-\begin{centering}
-\begin{tikzpicture}
-    \path[->]<2-> node[special,]
-(Requirements) at (0,.75)
-{More effective criterions require addtional runtime};
-\end{tikzpicture}
-\end{centering}
-\end{figure}
+\begin{frame}[label=current]
+  \frametitle{Adequacy Criteria}
+  \framesubtitle{\mbox{}}
+  \vspace*{-.1in}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{CriterionBoxDarker}
+  \end{figure}
+
+  \input{styles/kapfhammer-solarized-tikz-colors.tex}
+  % \vspace{-.10in}
+
+  \begin{figure}
+    \begin{centering}
+      \begin{tikzpicture}
+        \path[->]<2-> node[special,]
+          (Requirements) at (0,.75)
+          {More effective criteria require addtional runtime};
+      \end{tikzpicture}
+    \end{centering}
+  \end{figure}
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Data Generator}
-\framesubtitle{\mbox{}}
-\begin{figure}
-\includegraphics[width=\textwidth]{DataGeneratorBoxDarker}
-\end{figure}
-\vspace{-.10in}
-\input{styles/kapfhammer-solarized-tikz-colors.tex}
-\begin{figure}
-  \begin{centering}
-\begin{tikzpicture}
-    \path[->]<2-> node[special,]
-(Requirements) at (1.5,.75)
-{More effective generators can also be more efficient};
-\end{tikzpicture}
-\end{centering}
-\end{figure}
+\begin{frame}[label=current]
+  \frametitle{Data Generator}
+  \framesubtitle{\mbox{}}
+  \vspace*{-.1in}
+  \begin{figure}
+    \includegraphics[width=.95\textwidth]{DataGeneratorBoxDarker}
+  \end{figure}
+  % \vspace{-.10in}
+  \input{styles/kapfhammer-solarized-tikz-colors.tex}
+  \begin{figure}
+    \begin{centering}
+      \begin{tikzpicture}
+        \path[->]<2-> node[special,]
+          (Requirements) at (0,.75)
+          {More effective generators can also be more efficient};
+      \end{tikzpicture}
+    \end{centering}
+  \end{figure}
 \end{frame}
