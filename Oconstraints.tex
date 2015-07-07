@@ -1,4 +1,4 @@
-\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1.3}]
 
       \path[use as bounding box] (-3.0,2.5) rectangle (10,-2);
 
@@ -27,15 +27,15 @@
 
     \path[->]<4-> node[proc, below of=first, yshift=0.1in,
       xshift=0in,minimum width=21ex]
-      (seccond) {$20\% O(1)$ or $O(\log)$};
+      (seccond) {$20\%\; O(1)$ or $O(\log)$};
 
     \path[->]<5-> node[special, below of=seccond, yshift=0.10in,
       xshift=0in,minimum width=21ex]
-      (third) {$72\% O(n)$ or $O(n\log n)$};
+      (third) {$72\%\; O(n)$ or $O(n\log n)$};
 
     \path[->]<6-> node[special, below of=third, yshift=-0.10in,
       xshift=-0.75in,minimum width=21ex]
-      (takeaway) {\textit{SchemaAnalyst} scales linearly for constraints studied};
+      (takeaway) {\textit{SchemaAnalyst} $\in O(n)$ for constraints studied};
 
 
 
