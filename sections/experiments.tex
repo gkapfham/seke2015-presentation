@@ -1,4 +1,4 @@
- \begin{frame}[label=current]
+ \begin{frame}%[label=current]
         \frametitle{Experiments}
         \framesubtitle{\mbox{}}
         \centering
@@ -6,13 +6,18 @@
         \input{ExpParams.tex}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
   \frametitle{Relational Schemas}
   \framesubtitle{\mbox{}}
+  \hspace*{-.93in}
+  \begin{minipage}{6in}
 
   \begin{figure}
+
+    \vspace*{.25in}
+
   \begin{center}
-  {\normalsize
+  {\Large
   \begin{tabular}{r | c c c}
                            Schema & Tables & Columns & Constraints \\ \hline
     BioSQL                        & 28     & 129    &  \alert<4>{186} \\
@@ -28,20 +33,22 @@
 \end{center}
 \end{figure}
 
+  \end{minipage}
+
 \input{styles/kapfhammer-solarized-tikz-colors.tex}
 
-\begin{minipage}{1.5in}
-\begin{figure}
-\begin{centering}
-\begin{tikzpicture}
-  \path[use as bounding box] (-4.5,1) rectangle (10,-2);
-    \path[->]<5-> node[special,]
-(Requirements) at (0,0)
-{Real world schemas with a variety of characteristics};
-\end{tikzpicture}
-\end{centering}
-\end{figure}
-\end{minipage}
+% \begin{minipage}{1.5in}
+%   \begin{figure}
+%     \begin{centering}
+%       \begin{tikzpicture}
+%         \path[use as bounding box] (-4.5,1) rectangle (10,-2);
+%         \path[->]<5-> node[special,]
+%           (Requirements) at (0,0)
+%           {Real-world database schemas with a variety of characteristics};
+%       \end{tikzpicture}
+%     \end{centering}
+%   \end{figure}
+% \end{minipage}
 
 
 \end{frame}
