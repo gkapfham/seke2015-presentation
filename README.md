@@ -5,7 +5,7 @@ Kapfhammer](http://www.cs.allegheny.edu/sites/gkapfham), helped to develop and [
 Kinneer](https://github.com/kinneerc) gave at the 27th International Conference on Software Engineering and Knowledge
 Engineering (SEKE 2015).  The presentation's source code uses a wide variety of LaTeX packages, such as `beamer` and
 `pgftikz`, in order to create each slide.  I have developed a custom theme for the display of the slides and the use of
-full-screen photographs on the backgrounds.
+progressive revealing of technical diagrams.
 
 You are welcome to use these slides as inspiration for your own presentation. If you find this example useful, could I
 trouble you to star this repository and then acknowledge it in your own presentation slides? If you would like to learn
@@ -22,13 +22,15 @@ Then, if you want to compile the presentation to a PDF, you should type the foll
 
 ```shell
 cd seke2015-presentation
+pdflatex kinneer_seke.tex
+pdflatex kinneer_seke.tex
 ```
 
 Please note that this has been tested on an Ubuntu 15.04 workstation running a very recent version of LaTeX that was
-manually installed using the TeXLive installer. Additionally, you must ensure that your distribution has `minted`,
-`pygments`, and the `pygments-solarized` color scheme installed for your LaTeX distribution.  It is worth noting that
-you can also compile the paper using other LaTeX development tools, such as `latexmk`. If you are unable to compile the
-presentation with your development tools and your execution environment, then please open a new issue and I will attempt
-to resolve your concerns.
+manually installed using the TeXLive installer. It is worth noting that you can also compile the paper using other LaTeX
+development tools, such as `latexmk`. Additionally, you may find that the placement of certain `pgftikz` diagrams
+requires manual adjustment depending on your LaTeX development environment and other settings. If you are unable to
+compile the presentation with your development tools and your execution environment, then please open a new issue and I
+will attempt to resolve your concerns.
 
 
